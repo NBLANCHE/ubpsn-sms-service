@@ -16,3 +16,5 @@ rapidsms.log
 .idea/
 
 db.sqlite3
+
+.env

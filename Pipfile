@@ -4,10 +4,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
+pytest-django = "*"
+dicttoxml = "*"
 
 [packages]
-django = "*"
 djangorestframework = "*"
+twilio = "*"
+django = "*"
+drf-yasg = "*"
+django-dotenv = "*"
 
 [requires]
 python_version = "3.8.5"
