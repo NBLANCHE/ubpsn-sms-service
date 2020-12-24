@@ -13,5 +13,5 @@ class NewsletterTopic(models.Model):
 class NewsletterTopicMessage(models.Model):
     message = models.CharField(max_length=255)
     newsletter_topic = models.ForeignKey(NewsletterTopic, on_delete=models.CASCADE, related_name='messages')
-    def __str__(self),
+    def __str__(self):
     	return self.message
