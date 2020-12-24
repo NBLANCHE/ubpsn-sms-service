@@ -20,5 +20,6 @@ from sms_manager.views import hello_world
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello_world),
-    path('newsletter_topic/', include('newsletter_topic.urls'))
+    path('newsletter_topic/', include('newsletter_topic.urls')),
+    path('charity_user/', include('charity_user.urls'))
 ]
