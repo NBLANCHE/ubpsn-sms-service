@@ -4,10 +4,9 @@ from rest_framework.routers import DefaultRouter
 from newsletter_topic.views import NewsletterTopicViewSet, NewsletterTopicMessageViewSet
 
 router = DefaultRouter()
-router.register(r'topic', NewsletterTopicViewSet)
-router.register(r'topic_message', NewsletterTopicMessageViewSet)
+router.register(r"topic", NewsletterTopicViewSet)
+router.register(r"topic_message", NewsletterTopicMessageViewSet)
 urlpatterns = router.urls
-urlpatterns = [
-]
+urlpatterns = []
 
 urlpatterns += router.urls

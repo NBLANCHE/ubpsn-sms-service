@@ -7,13 +7,13 @@ from newsletter_topic.models import NewsletterTopic, NewsletterTopicMessage
 class NewsletterTopicMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsletterTopicMessage
-        fields = ['id', 'message']
+        fields = ["id", "message"]
 
 
 class SubscribedCharityUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CharityUser
-        fields = ['id', 'name', 'phone_number']
+        fields = ["id", "name", "phone_number"]
 
 
 class NewsletterTopicSerializer(serializers.ModelSerializer):
@@ -22,4 +22,4 @@ class NewsletterTopicSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewsletterTopic
-        fields = ['id', 'name', 'messages', 'subscribed_users']
+        fields = ["id", "name", "messages", "subscribed_users"]

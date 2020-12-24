@@ -9,16 +9,31 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('charity_user', '0002_charityuser_subscribed_newsletter_topics'),
+        ("charity_user", "0002_charityuser_subscribed_newsletter_topics"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Message',
+            name="Message",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('message', models.CharField(max_length=255)),
-                ('charity_user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='messages', to='charity_user.charityuser')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("message", models.CharField(max_length=255)),
+                (
+                    "charity_user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="messages",
+                        to="charity_user.charityuser",
+                    ),
+                ),
             ],
         ),
     ]
