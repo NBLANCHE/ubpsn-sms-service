@@ -7,10 +7,7 @@ verify_ssl = true
 
 [packages]
 django = "*"
-rapidsms = "*"
 djangorestframework = "*"
-serializer = "*"
-generics = "*"
 
 [requires]
 python_version = "3.8.5"
