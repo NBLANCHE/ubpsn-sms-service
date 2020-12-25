@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from charity_user.models import CharityUser
 from newsletter_topic.models import NewsletterTopic, NewsletterTopicMessage
+from charity_user.serializers import CharityUserSerializer
 
 
 class NewsletterTopicMessageSerializer(serializers.ModelSerializer):
@@ -18,7 +19,7 @@ class SubscribedCharityUserSerializer(serializers.ModelSerializer):
 
 class NewsletterTopicSerializer(serializers.ModelSerializer):
     messages = NewsletterTopicMessageSerializer(many=True, required=False)
-    subscribed_users = SubscribedCharityUserSerializer(many=True, read_only=True)
+    subscribed_users = CharityUserSerializer(many=True, read_only=True)
 
     class Meta:
         model = NewsletterTopic
