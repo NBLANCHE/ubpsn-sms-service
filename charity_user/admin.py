@@ -1,3 +1,4 @@
 from django.contrib import admin
+from charity_user.models import CharityUser
 
-# Register your models here.
+admin.site.register(CharityUser)
