@@ -24,11 +24,13 @@ SECRET_KEY = "gw1-7#2%51ul)gctcla9lx1j4y2n6r(=vh&l3g6hbua9wwavo+"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.ngrok.io', 'localhost']
+ALLOWED_HOSTS = [".ngrok.io", "localhost"]
 
 # Application definition
 
-REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema"}
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
 
 INSTALLED_APPS = [
     "django.contrib.admin",

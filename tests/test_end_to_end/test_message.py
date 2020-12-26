@@ -1,7 +1,7 @@
 import uuid
 from random import randint
 
-from message.tests.test_end_to_end.client import Client
+from tests.test_end_to_end.client import Client
 
 
 def test_message_create_with_valid_message_should_create(client: Client, existing_user):
