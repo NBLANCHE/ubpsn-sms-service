@@ -6,7 +6,5 @@ from newsletter_topic.views import NewsletterTopicViewSet, NewsletterTopicMessag
 router = DefaultRouter()
 router.register(r"topic", NewsletterTopicViewSet)
 router.register(r"topic_message", NewsletterTopicMessageViewSet)
-urlpatterns = router.urls
 urlpatterns = []
-
 urlpatterns += router.urls
