@@ -19,3 +19,6 @@ class NewsletterTopicViewSet(viewsets.ModelViewSet):
 class NewsletterTopicMessageViewSet(viewsets.ModelViewSet):
     queryset = NewsletterTopicMessage.objects.all()
     serializer_class = NewsletterTopicMessageSerializer
+    # Get users subscribed, then call service
+    def perform_create(self, serializer):
+        pass
