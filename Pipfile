@@ -13,6 +13,7 @@ twilio = "*"
 django = "*"
 drf-yasg = "*"
 django-dotenv = "*"
+black = "20.8b1"
 
 [requires]
-python_version = "3.8.5"
+python_version = "3.8.5

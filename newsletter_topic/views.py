@@ -15,6 +15,7 @@ from message.services import MessageService
 
 logger = logging.getLogger(__name__)
 
+
 class NewsletterTopicViewSet(viewsets.ModelViewSet):
     queryset = NewsletterTopic.objects.all()
     serializer_class = NewsletterTopicSerializer
@@ -26,8 +27,10 @@ class NewsletterTopicMessageViewSet(viewsets.ModelViewSet):
     # Get users subscribed, then call service
     def perform_create(self, serializer):
         # TODO error handling etc
-        newsletter_topic = NewsletterTopic.objects.get(name=serializer.validated_data['newsletter_topic'])
-        for user in newsletter_topic.subscribed_users.all(): 
+        newsletter_topic = NewsletterTopic.objects.get(
+            name=serializer.validated_data["newsletter_topic"]
+        )
+        for user in newsletter_topic.subscribed_users.all():
             # create a message for each user
             message_text = serializer.validated_data["message"]
             message = Message(message=message_text)

@@ -51,7 +51,7 @@ class MessageService:
         message.message = incoming_sms.body
         message.charity_user = charity_user
         message.save()
-        # fix type here define __str__ 
+        # fix type here define __str__
         message = str(message.message)
 
         match_object = re.search("^subscribe (.*)", message)
