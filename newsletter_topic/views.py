@@ -11,6 +11,8 @@ from newsletter_topic.serializers import (
     NewsletterTopicMessageSerializer,
 )
 from message.models import Message
+from message.services import MessageService
+
 logger = logging.getLogger(__name__)
 
 class NewsletterTopicViewSet(viewsets.ModelViewSet):
@@ -30,3 +32,5 @@ class NewsletterTopicMessageViewSet(viewsets.ModelViewSet):
             message_text = serializer.validated_data["message"]
             message = Message(message=message_text)
             message.charity_user = user
+            message_service = MessageService()
+            message_response = message_service.send_message(message)
