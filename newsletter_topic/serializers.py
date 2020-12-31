@@ -8,7 +8,7 @@ from charity_user.serializers import CharityUserSerializer
 class NewsletterTopicMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsletterTopicMessage
-        fields = ["id", "message"]
+        fields = ["id", "message", "newsletter_topic"]
 
 
 class SubscribedCharityUserSerializer(serializers.ModelSerializer):
@@ -18,7 +18,7 @@ class SubscribedCharityUserSerializer(serializers.ModelSerializer):
 
 
 class NewsletterTopicSerializer(serializers.ModelSerializer):
-    messages = NewsletterTopicMessageSerializer(many=True, required=False)
+    messages = NewsletterTopicMessageSerializer(many=True, required=False, read_only=True)
     subscribed_users = CharityUserSerializer(many=True, read_only=True)
 
     class Meta:
