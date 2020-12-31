@@ -3,13 +3,14 @@ from django.http import Http404
 # Create your views here.
 from rest_framework import status, generics, viewsets
 from rest_framework.response import Response
-import logging
+import logging, pprint
 
 from newsletter_topic.models import NewsletterTopic, NewsletterTopicMessage
 from newsletter_topic.serializers import (
     NewsletterTopicSerializer,
     NewsletterTopicMessageSerializer,
 )
+from message.models import Message
 logger = logging.getLogger(__name__)
 
 class NewsletterTopicViewSet(viewsets.ModelViewSet):
@@ -22,5 +23,10 @@ class NewsletterTopicMessageViewSet(viewsets.ModelViewSet):
     serializer_class = NewsletterTopicMessageSerializer
     # Get users subscribed, then call service
     def perform_create(self, serializer):
-        newsletter_topic_queryset = NewsletterTopic.objects.get(name=serializer.validated_data['newsletter_topic'])
-        subscribed_users = newsletter_topic_queryset.subscribed_users
+        # TODO error handling etc
+        newsletter_topic = NewsletterTopic.objects.get(name=serializer.validated_data['newsletter_topic'])
+        for user in newsletter_topic.subscribed_users.all(): 
+            # create a message for each user
+            message_text = serializer.validated_data["message"]
+            message = Message(message=message_text)
+            message.charity_user = user
