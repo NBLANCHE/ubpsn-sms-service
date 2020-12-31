@@ -22,4 +22,5 @@ class NewsletterTopicMessageViewSet(viewsets.ModelViewSet):
     serializer_class = NewsletterTopicMessageSerializer
     # Get users subscribed, then call service
     def perform_create(self, serializer):
-        logger.info(__name__)
+        newsletter_topic_queryset = NewsletterTopic.objects.get(name=serializer.validated_data['newsletter_topic'])
+        subscribed_users = newsletter_topic_queryset.subscribed_users
