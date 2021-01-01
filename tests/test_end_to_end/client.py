@@ -55,10 +55,10 @@ class Client:
 
     def create_charity_user(self, name, phone_number):
         user = {"name": name, "phone_number": phone_number}
-        return self.post("/charity_user/", data=json.dumps(user))
+        return self.post("/charity_user/user/", data=json.dumps(user))
 
     def get_charity_users(self):
-        return self.get("/charity_user/")
+        return self.get("/charity_user/user/")
 
     def get_charity_user_by_phone_number(self, phone_number):
         r = self.get_charity_users()

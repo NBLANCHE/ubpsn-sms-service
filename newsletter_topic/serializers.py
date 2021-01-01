@@ -21,7 +21,7 @@ class NewsletterTopicSerializer(serializers.ModelSerializer):
     messages = NewsletterTopicMessageSerializer(
         many=True, required=False, read_only=True
     )
-    subscribed_users = CharityUserSerializer(many=True, read_only=True)
+    subscribed_users = CharityUserSerializer(many=True, required=False, read_only=True)
 
     class Meta:
         model = NewsletterTopic

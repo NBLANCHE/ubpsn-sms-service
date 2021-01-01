@@ -8,5 +8,5 @@ class CharityUser(models.Model):
     name = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=20, unique=True)
     subscribed_newsletter_topics = models.ManyToManyField(
-        NewsletterTopic, related_name="subscribed_users"
+        NewsletterTopic, related_name="subscribed_users", blank=True
     )
