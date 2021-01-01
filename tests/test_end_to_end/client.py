@@ -83,6 +83,10 @@ class Client:
 
     def get_all_newsletter_topics(self):
         return self.get("/newsletter_topic/topic/")
+    
+    def get_newsletter_topic(self, newsletter_topic_id):
+        r = self.get(f"/newsletter_topic/topic/{newsletter_topic_id}") 
+        return r.json()
 
     def get_newsletter_topic_by_name(self, newsletter_topic_name):
         r = self.get_all_newsletter_topics()
@@ -95,6 +99,9 @@ class Client:
             )
         )[0]
 
+    def get_subscribed_newsletter_topics_by_user(self, user_id):
+        r = self.get(f"/charity_user/user/{user_id}/newsletter_topic")
+        return r.json()
 
 sms_template = {
     "ToCountry": "US",

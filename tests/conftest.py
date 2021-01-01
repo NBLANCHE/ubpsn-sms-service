@@ -19,9 +19,9 @@ def client() -> Client:
 def existing_user(client: Client):
     try:
         user = client.get_charity_user_by_phone_number(test_user["phone_number"])
-        for subscription in user["subscribed_newsletter_topics"]:
+        for topic_id in user["subscribed_newsletter_topics"]:
             client.unsubscribe_user_to_newsletter_topic(
-                user["phone_number"], subscription["name"]
+                user["phone_number"], client.get_newsletter_topic(topic_id)['name']
             )
         return client.get_charity_user_by_phone_number(test_user["phone_number"])
     except Exception:
