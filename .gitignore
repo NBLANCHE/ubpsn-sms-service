@@ -12,9 +12,7 @@ public/static/
 public/media/
 *-env/
 rapidsms.log
-
+.vscode/
 .idea/
-
 db.sqlite3
-
 .env
