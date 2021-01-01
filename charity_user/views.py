@@ -16,6 +16,7 @@ class CharityUserViewSet(viewsets.ModelViewSet):
     queryset = CharityUser.objects.all()
     serializer_class = CharityUserSerializer
 
+
 class SubscribedNewsletterTopicsViewSet(viewsets.ModelViewSet):
     queryset = NewsletterTopic.objects.all()
     serializer_class = NewsletterTopicSerializer
